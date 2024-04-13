@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="header">
-    <a href="/" class="logo">PhoneBase</a>
+    <a href="/" class="logo">Телефоновая база</a>
 </div>
 <div id="subheader">
 
@@ -20,21 +20,22 @@
 
         {% with total_items=cart|length %}
         {% if total_items > 0 %}
-        Your cart:
+        Ваша корзина:
         <a href="{% url 'cart:cart_detail' %}">
         {{ total_items }} item{{ total_items|pluralize }},
         ${{ cart.get_total_price }}
         </a>
         {% elif not order %}
-        Your cart is empty.
+        Ваша корзина пуста
         {% endif %}
         {% endwith %}
         {% endif %}
 
         {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}" class="btn btn-outline-primary">Logout</a>
+        <a href="{% url 'profile' %}"  class="btn btn-primary">Личный кабинет</a>
+        <a href="{% url 'logout' %}" class="btn btn-outline-primary">Выход</a>
         {% else %}
-        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">Вход</a>
         {% endif %}
     </div>
 </div>

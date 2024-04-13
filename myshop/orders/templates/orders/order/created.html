@@ -1,11 +1,11 @@
 {% extends "shop/base.html" %}
 
 {% block title %}
-  Thank you
+  Благодарим за покупку
 {% endblock %}
 
 {% block content %}
-  <h1>Thank you</h1>
-  <p>Your order has been successfully completed. Your order number is
-  <strong>{{ order.id }}</strong>.</p>
+  <h1>Благодарим за покупку</h1>
+  <p>Ваш заказ успешно оформлен. Номер вашего заказа
+  <strong>{{ order.id }}</strong> от <strong>{{ order.created|date:"Y-m-d" }}</p>
 {% endblock %}
